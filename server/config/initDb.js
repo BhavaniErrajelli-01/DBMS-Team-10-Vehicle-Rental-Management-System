@@ -4,19 +4,24 @@ const path = require('path');
 
 async function initializeDatabase() {
   try {
+    require('dotenv').config();
+    const dbName = process.env.DB_NAME || 'vehicle_rental_db';
+
     // 1. Connect without database to create it if it doesn't exist
     const connection = await mysql.createConnection({
-      host: 'localhost',
-      user: 'root',
-      password: 'root',
+      host: process.env.DB_HOST || 'localhost',
+      user: process.env.DB_USER || 'root',
+      password: process.env.DB_PASSWORD || 'root',
+      port: process.env.DB_PORT || 3306,
+      ssl: process.env.DB_HOST && process.env.DB_HOST !== 'localhost' ? { rejectUnauthorized: false } : undefined
     });
 
     console.log('Connected to MySQL server.');
 
-    await connection.query('CREATE DATABASE IF NOT EXISTS vehicle_rental_db;');
-    console.log('Database vehicle_rental_db created or already exists.');
+    await connection.query(`CREATE DATABASE IF NOT EXISTS \`${dbName}\`;`);
+    console.log(`Database ${dbName} created or already exists.`);
 
-    await connection.query('USE vehicle_rental_db;');
+    await connection.query(`USE \`${dbName}\`;`);
 
     // 2. Read and execute the SQL file (or define inline)
     const sqlFile = fs.readFileSync(path.join(__dirname, '..', 'database.sql'), 'utf-8');

@@ -75,7 +75,7 @@ const Booking = () => {
     <div className="container" style={{ padding: '2rem 0', display: 'flex', gap: '2rem', flexWrap: 'wrap' }}>
       <div style={{ flex: '1 1 500px' }}>
         <img 
-          src={vehicle.image || 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=800&h=500'} 
+          src={vehicle.image ? (vehicle.image.startsWith('http') ? vehicle.image : `${import.meta.env.VITE_API_URL || ''}${vehicle.image}`) : 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=800&h=500'} 
           alt={vehicle.name} 
           style={{ width: '100%', borderRadius: '0.5rem', objectFit: 'cover' }} 
         />
