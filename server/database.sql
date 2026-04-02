@@ -18,6 +18,8 @@ CREATE TABLE IF NOT EXISTS vehicles (
   price_per_day DECIMAL(10, 2) NOT NULL,
   availability BOOLEAN DEFAULT TRUE,
   image VARCHAR(1000),
+  speed VARCHAR(100),
+  vehicle_number VARCHAR(100),
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 

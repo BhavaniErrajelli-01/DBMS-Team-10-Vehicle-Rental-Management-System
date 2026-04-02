@@ -31,6 +31,15 @@ async function initializeDatabase() {
       await connection.query(statement);
     }
 
+    // Try migrating existing tables in production
+    try {
+      await connection.query('ALTER TABLE vehicles ADD COLUMN speed VARCHAR(100);');
+    } catch (e) {} // Ignore if already exists
+    
+    try {
+      await connection.query('ALTER TABLE vehicles ADD COLUMN vehicle_number VARCHAR(100);');
+    } catch (e) {} // Ignore if already exists
+
     console.log('All tables verified/created successfully.');
     await connection.end();
   } catch (err) {
