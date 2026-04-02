@@ -25,7 +25,7 @@ exports.register = async (req, res) => {
     // Insert user
     const [result] = await db.execute(
       'INSERT INTO users (name, email, password, phone, role) VALUES (?, ?, ?, ?, ?)',
-      [name, email, hashedPassword, phone, userRole]
+      [name, email, hashedPassword, phone || null, userRole]
     );
 
     const token = jwt.sign({ id: result.insertId, role: userRole }, JWT_SECRET, { expiresIn: '1d' });
