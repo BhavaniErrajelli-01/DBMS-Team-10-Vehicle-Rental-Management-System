@@ -5,7 +5,7 @@ This project allows users to browse available vehicles, make bookings, and manag
 
 ## 🌐 Live Demo
 Check out the deployed project here:  
-[Vehicle Rental Management System](https://dbms-team-10-vehicle-rental-management-system-2vmgcxowc.vercel.app)
+(https://dbms-team-10-vehicle-rental-management-system-2vmgcxowc.vercel.app)
 
 ---
 
