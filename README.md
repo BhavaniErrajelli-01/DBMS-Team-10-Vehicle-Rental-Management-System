@@ -7,17 +7,12 @@ A full-stack web application designed to smoothly handle vehicle rentals, incorp
 
 ---
 
-## 🛠️ Technology Stack
 
-**Frontend**
-- React.js (Bootstrapped with Vite)
-- HTML5 & Modern CSS
-
-**Backend**
-- Node.js & Express.js
-- MySQL (via `mysql2`)
-- Authentication: JSON Web Tokens (JWT) & bcryptjs
-- Middleware: CORS, Multer (for file/image uploads), dotenv
+## 🛠️ Tech Stack
+- *Frontend*: React, Vite, CSS
+- *Backend*: Node.js, Express
+- *Database*: MySQL
+- *Deployment*: Verce
 
 ---
 ##⚙️ Features
