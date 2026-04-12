@@ -3,7 +3,8 @@
 A full-stack web application designed to smoothly handle vehicle rentals, incorporating user authentication, a backend API, and a modern frontend interface.
 
 ## 🚀 Live Demo
-**[Live Working Web Application](https://dbms-team-10-vehicle-rental-management-system-2vmgcxowc.vercel.app)**
+**[Live Working Web Application] Check out the deployed project here:  
+(https://dbms-team-10-vehicle-rental-management-system-2vmgcxowc.vercel.app)
 
 ---
 
